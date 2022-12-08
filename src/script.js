@@ -1,4 +1,4 @@
-import uniqid from "uniqid";
+import uniqid from "../node_modules/uniqid/index";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 
 Notify.init({
