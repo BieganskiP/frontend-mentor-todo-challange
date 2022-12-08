@@ -535,7 +535,7 @@ function hmrAcceptRun(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _index = require("../node_modules/uniqid/index");
 var _indexDefault = parcelHelpers.interopDefault(_index);
-var _notiflixNotifyAio = require("notiflix/build/notiflix-notify-aio");
+var _notiflixNotifyAio = require("../node_modules/notiflix/build/notiflix-notify-aio");
 (0, _notiflixNotifyAio.Notify).init({
     width: "280px",
     position: "center-top"
@@ -621,7 +621,7 @@ optionsDesktop.addEventListener("click", (event)=>{
     else return;
 });
 
-},{"../node_modules/uniqid/index":"iN0co","notiflix/build/notiflix-notify-aio":"eXQLZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iN0co":[function(require,module,exports) {
+},{"../node_modules/uniqid/index":"iN0co","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../node_modules/notiflix/build/notiflix-notify-aio":"eXQLZ"}],"iN0co":[function(require,module,exports) {
 /* 
 (The MIT License)
 Copyright (c) 2014-2021 Halász Ádám <adam@aimform.com>
@@ -859,6 +859,36 @@ exports.tmpdir = exports.tmpDir = function() {
 exports.EOL = "\n";
 exports.homedir = function() {
     return "/";
+};
+
+},{}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
 };
 
 },{}],"eXQLZ":[function(require,module,exports) {
@@ -1329,36 +1359,6 @@ var global = arguments[3];
         Notify: Notiflix.Notify
     };
 });
-
-},{}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
 
 },{}]},["4qavH","8ZNvh"], "8ZNvh", "parcelRequire716c")
 

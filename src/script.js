@@ -1,5 +1,5 @@
 import uniqid from "../node_modules/uniqid/index";
-import { Notify } from "notiflix/build/notiflix-notify-aio";
+import { Notify } from "../node_modules/notiflix/build/notiflix-notify-aio";
 
 Notify.init({
   width: "280px",
