@@ -27,6 +27,7 @@ function createTask(task) {
 
   newTaskEl.classList.add("tile");
   newTaskEl.classList.add("task-tile");
+  newTaskEl.classList.add("task-tile--not-completed");
   taskCheckboxCustom.classList.add("checkbox--custom");
   taskCheckbox.classList.add("checkbox");
   taskContent.classList.add("task__label");
@@ -53,6 +54,7 @@ function createTask(task) {
   });
   taskCheckbox.addEventListener("change", () => {
     newTaskEl.classList.toggle("task-tile--completed");
+    newTaskEl.classList.toggle("tasl-tile--not-completed");
   });
 }
 
@@ -75,8 +77,6 @@ clearCompleted.addEventListener("click", () => {
   allChecked.forEach((child) => child.parentElement.parentElement.remove());
 });
 
-
-
 const optionsDesktop = document.querySelector("#optionsDesktop");
 
 optionsDesktop.addEventListener("click", (event) => {
@@ -87,4 +87,26 @@ optionsDesktop.addEventListener("click", (event) => {
 
   if (target.tagName != "A") return;
   target.classList.add("options--active");
+
+  const allTasks = document.querySelectorAll(".task-tile");
+  const checkboxes = document.querySelectorAll("input[type=checkbox]:checked");
+
+  if (target.classList.contains("all")) {
+    allTasks.forEach((el) => {
+      el.classList.remove("hidden-tile");
+    });
+    return;
+  } else if (target.classList.contains("active")) {
+    allTasks.forEach((el) => {
+      if (el.classList.contains("task-tile--completed")) {
+        el.classList.add("hidden-tile");
+      }
+    });
+  } else if (target.classList.contains("completed")) {
+    allTasks.forEach((el) => {
+      if (el.classList.contains("task-tile--not-completed")) {
+        el.classList.add("hidden-tile");
+      }
+    });
+  } else return;
 });

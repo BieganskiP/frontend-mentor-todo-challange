@@ -3,7 +3,6 @@
   --text-additional: #9495a5;
   --body-bg: #fafafa;
   --main-bg: #fff;
-  --focus: #000;
   --divider: #e3e4f1;
   --index: 999;
 
@@ -16,7 +15,6 @@
   --text-additional: #4d5067;
   --body-bg: #171823;
   --main-bg: #25273d;
-  --focus: #fff;
   --divider: #393a4b;
   --index: -999;
 
@@ -114,8 +112,8 @@ body {
 }
 .tile-input:focus {
   outline: none;
-  border-top: var(--focus) 2px solid;
-  border-bottom: var(--focus) 2px solid;
+  border-top: var(--text-active) 2px solid;
+  border-bottom: var(--text-active) 2px solid;
 }
 .checkbox {
   position: absolute;
@@ -136,6 +134,9 @@ body {
 .task-tile--completed {
   text-decoration: line-through;
   color: var(--text-additional);
+}
+.task-tile--not-completed {
+  opacity: 1;
 }
 .checkbox--custom {
   position: absolute;
@@ -280,4 +281,11 @@ body {
     gap: 18px;
     font-weight: 700;
   }
+}
+
+.hidden-tile {
+  display: none;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
 }
