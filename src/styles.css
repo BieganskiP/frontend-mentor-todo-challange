@@ -289,3 +289,7 @@ body {
   visibility: hidden;
   opacity: 0;
 }
+
+.dragged-item {
+  opacity: 0.7;
+}

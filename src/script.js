@@ -33,6 +33,7 @@ function createTask(task) {
   taskContent.classList.add("task__label");
   removeBtn.classList.add("task__remove");
 
+  newTaskEl.setAttribute("draggable", "true");
   taskCheckbox.setAttribute("type", "checkbox");
   taskCheckbox.setAttribute("name", "Input checkmark");
   taskCheckbox.setAttribute("id", uniqid());
