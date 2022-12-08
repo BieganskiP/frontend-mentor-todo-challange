@@ -596,6 +596,14 @@ clearCompleted.addEventListener("click", ()=>{
     updateCounter();
     allChecked.forEach((child)=>child.parentElement.parentElement.remove());
 });
+const optionsDesktop = document.querySelector("#optionsDesktop");
+optionsDesktop.addEventListener("click", (event)=>{
+    let notTarget = document.querySelectorAll("a");
+    notTarget.forEach((el)=>el.classList.remove("options--active"));
+    let target = event.target;
+    if (target.tagName != "A") return;
+    target.classList.add("options--active");
+});
 
 },{"uniqid":"iN0co","notiflix/build/notiflix-notify-aio":"eXQLZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iN0co":[function(require,module,exports) {
 /* 

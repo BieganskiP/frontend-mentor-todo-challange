@@ -29,15 +29,17 @@
       <ul class="task-list" id="taskList"></ul>
       <div class="tile options">
         <p><span data-counter="">0</span> items left</p>
-        <span class="options--desktop"><a href="#" class="options--active" id="showAll">All</a>
+        <div class="options--desktop" id="optionsDesktop">
+          <a href="#" class="options--active" id="showAll">All</a>
           <a href="#" id="showActive">Active</a>
-          <a href="#" id="showCompleted">Completed</a></span>
+          <a href="#" id="showCompleted">Completed</a>
+        </div>
         <a href="#" id="clearCompleted">Clear Completed</a>
       </div>
-      <div class="tile options--mobile">
-        <a href="#" class="options--active" id="showAll">All</a>
-        <a href="#" id="showActive">Active</a>
-        <a href="#" id="showCompleted">Completed</a>
+      <div class="tile options--mobile" id="optionsMobile">
+        <a href="#" class="options--active" id="showAllMobile">All</a>
+        <a href="#" id="showActiveMobile">Active</a>
+        <a href="#" id="showCompletedMobile">Completed</a>
       </div>
       <p class="info">Drag and drop to reorder list</p>
     </main>
