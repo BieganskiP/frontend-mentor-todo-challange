@@ -55,7 +55,7 @@ taskInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     event.preventDefault();
     if (taskInput.value == "") {
-      Notify.warning("You need to add task, you can't be doing nothing");
+      alert("You need to add task, you can't be doing nothing");
     } else {
       createTask(taskInput.value);
       updateCounter();
