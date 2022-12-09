@@ -1,11 +1,3 @@
-import uniqid from "../node_modules/uniqid/index";
-import { Notify } from "../node_modules/notiflix/build/notiflix-notify-aio";
-
-Notify.init({
-  width: "280px",
-  position: "center-top",
-});
-
 let counter = document.querySelector("[data-counter]");
 let taskCounter = 0;
 let allChecked = [];
